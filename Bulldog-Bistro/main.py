@@ -3,40 +3,47 @@ import os
 
 pygame.init()
 
+SCREEN_WIDTH = 1000
+SCREEN_HEIGHT = 800
 
-SCREEN_WIDTH = 800
-SCREEN_HEIGHT = 600
+game_display = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
+pygame.display.set_caption('Bulldog Bistro')  # Fixed typo in set_caption
 
-screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
+white_color = (255, 255, 255)
 
-# load player gifs (from assests) FUT make our own charecter??
-player_walk_right = pygame.image.load(os.path.join(
-    "assets", "char free", "char_walk_right.gif")).convert_alpha()
-player_walk_left = pygame.image.load(os.path.join(
-    "assets", "char free", "char_walk_left.gif")).convert_alpha()
+# Corrected typo: pygame.image.load
+# character_image = pygame.image.load('assets/rival.png')
+# os.path.dirname(os.path.abspath('rival.png'))
 
-player_rect = player_walk_right.get_rect()
-player_rect.topleft = (300, 250)
-current_image = player_walk_right
+
+"""def add_character_at_location(x, y):
+    game_display.blit(character_image, (x, y))"""
+
+
+character_x = SCREEN_WIDTH // 2
+character_y = SCREEN_HEIGHT // 2
 
 clock = pygame.time.Clock()
 
 run = True
 
 while run:
-    screen.fill((0, 0, 0))
+    # Changed "screen" to "game_display" to match the display surface
+    game_display.fill((0, 0, 0))
 
-    # Draw player sprite
-    screen.blit(current_image, player_rect)
+    # Draw character at current location
+    # add_character_at_location(character_x, character_y)
 
     # Movement controls
     key = pygame.key.get_pressed()
     if key[pygame.K_a]:
-        current_image = player_walk_left
-        player_rect.move_ip(-1, 0)
-    elif key[pygame.K_d]:
-        current_image = player_walk_right
-        player_rect.move_ip(1, 0)
+        character_x -= 1
+    if key[pygame.K_d]:
+        character_x += 1
+    if key[pygame.K_w]:
+        character_y -= 1
+    if key[pygame.K_s]:
+        character_y += 1
 
     # Event handling
     for event in pygame.event.get():
@@ -44,6 +51,6 @@ while run:
             run = False
 
     pygame.display.update()
-    clock.tick(10)  # Adjust the frame rate as needed
+    clock.tick(60)  # Adjust the frame rate as needed
 
 pygame.quit()
