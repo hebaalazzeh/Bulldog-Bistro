@@ -7,27 +7,17 @@ SCREEN_WIDTH = 1000
 SCREEN_HEIGHT = 800
 
 game_display = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
-pygame.display.set_caption('Bulldog Bistro')  # Fixed typo in set_caption
+pygame.display.set_caption('Bulldog Bistro')
 
-white_color = (255, 255, 255)
-
-# Corrected typo: pygame.image.load
-# character_image = pygame.image.load('assets/rival.png')
-# os.path.dirname(os.path.abspath('rival.png'))
-
-
-"""def add_character_at_location(x, y):
-    game_display.blit(character_image, (x, y))"""
-
-
-character_x = SCREEN_WIDTH // 2
-character_y = SCREEN_HEIGHT // 2
+bulldog_charecter = pygame.image.load(os.path.join('rival.png'))
+background = pygame.image.load('background.png')
 
 clock = pygame.time.Clock()
 
 run = True
 
 while run:
+
     # Changed "screen" to "game_display" to match the display surface
     game_display.fill((0, 0, 0))
 
