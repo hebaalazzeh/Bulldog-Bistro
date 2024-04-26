@@ -14,7 +14,7 @@ game_display = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
 pygame.display.set_caption('Bulldog Bistro')
 
 character = pygame.image.load(os.path.join('rival.png'))
-character = pygame.transform.scale(character, (128, 128))
+character = pygame.transform.scale(character, (200, 200))
 
 character_width, character_height = character.get_size()  # Get character size
 
