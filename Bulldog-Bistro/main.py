@@ -16,7 +16,7 @@ game_display = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
 pygame.display.set_caption('Bulldog Bistro')
 
 character = pygame.image.load(os.path.join('rival.png'))
-character = pygame.transform.scale(character, (50, 100))
+character = pygame.transform.scale(character, (128, 128))
 
 character_x = 370
 character_y = 480
@@ -35,7 +35,6 @@ while run:
 
     game_display.blit(background, (0, 0))
     game_display.blit(character, (370, 480))
-    
 
     # Draw character at current location
     # add_character_at_location(character_x, character_y)
@@ -60,4 +59,3 @@ while run:
     clock.tick(60)  # Adjust the frame rate as needed
 
 pygame.quit()
-
