@@ -1,6 +1,12 @@
 import pygame
 import os
 
+
+f = open("/dev/null", "w")
+os.dup2(f.fileno(), 2)
+f.close()
+
+
 pygame.init()
 
 SCREEN_WIDTH = 1000
@@ -14,6 +20,8 @@ background = pygame.image.load('background.png')
 
 clock = pygame.time.Clock()
 
+
+""""
 run = True
 
 while run:
@@ -44,3 +52,4 @@ while run:
     clock.tick(60)  # Adjust the frame rate as needed
 
 pygame.quit()
+"""
