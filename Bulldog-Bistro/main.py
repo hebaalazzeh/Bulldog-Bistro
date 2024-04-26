@@ -39,6 +39,7 @@ class Coin(pygame.sprite.Sprite):
         super().__init__()
         self.image = pygame.Surface((32, 32))
         self.image.fill((255, 215, 0))  # Yellow color for coin
+
         self.rect = self.image.get_rect()
         self.rect.x = random.randint(0, SCREEN_WIDTH - self.rect.width)
         self.rect.y = random.randint(0, SCREEN_HEIGHT - self.rect.height)
@@ -79,8 +80,7 @@ while run:
 
     all_sprites.draw(game_display)
 
-    collisions = pygame.sprite.spritecollide(character, coins, True)
-    if collisions:
+    if collisions := pygame.sprite.spritecollide(character, coins, True):
         score += len(collisions)
         for _ in range(len(collisions)):
             spawn_coin()
@@ -90,10 +90,11 @@ while run:
             run = False
 
     font = pygame.font.SysFont(None, 36)
-    text = font.render("Score: " + str(score), True, (255, 255, 255))
+    text = font.render(f"Score: {str(score)}", True, (255, 255, 255))
     game_display.blit(text, (10, 10))
 
     pygame.display.update()
+
     clock.tick(60)
 
 pygame.quit()
