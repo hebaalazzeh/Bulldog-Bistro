@@ -21,13 +21,15 @@ background = pygame.image.load('background.png')
 clock = pygame.time.Clock()
 
 
-""""
+
 run = True
 
 while run:
 
     # Changed "screen" to "game_display" to match the display surface
     game_display.fill((0, 0, 0))
+
+    game_display.blit(background, (0, 0))
 
     # Draw character at current location
     # add_character_at_location(character_x, character_y)
@@ -52,4 +54,4 @@ while run:
     clock.tick(60)  # Adjust the frame rate as needed
 
 pygame.quit()
-"""
+
