@@ -17,6 +17,7 @@ pygame.display.set_caption('Bulldog Bistro')
 
 bulldog_charecter = pygame.image.load(os.path.join('rival.png'))
 background = pygame.image.load('background.png')
+background = pygame.transform.scale(background, (1000, 800))
 
 clock = pygame.time.Clock()
 
