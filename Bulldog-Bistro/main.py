@@ -15,6 +15,7 @@ character_img = pygame.image.load(os.path.join('rival.png'))
 character_img = pygame.transform.scale(character_img, (128, 128))
 
 background = pygame.image.load('background.png')
+print(background.get_width(), background.get_height())
 background = pygame.transform.scale(background, (1000, 800))
 
 clock = pygame.time.Clock()
@@ -56,11 +57,11 @@ og_plate_positions = ((97, 192),
                       (388, 296),
                       (410, 313))  # coordniates of the plates
 
-x_scale = background.get_width() / SCREEN_WIDTH
-y_scale = background.get_height() / SCREEN_HEIGHT
+x_scale = SCREEN_WIDTH/500
+y_scale = SCREEN_HEIGHT/500
 
 # Scale and update table positions
-plate_positions = [(int(x * x_scale), int(y * y_scale))
+plate_positions = [(int((x-20) * x_scale), int((y-10) * y_scale))
                    for x, y in og_plate_positions]
 
 
