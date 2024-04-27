@@ -48,12 +48,12 @@ coins = pygame.sprite.Group()
 character = Character()
 all_sprites.add(character)
 
-og_plate_positions = ((97, 192),
-                      (158, 192),
-                      (312, 173),
-                      (355, 173),
-                      (283, 309),
-                      (338, 292),
+og_plate_positions = ((77, 192), #done
+                      (125, 192), #done
+                      (330, 173), #done
+                      (380, 173), #done
+                      (300, 300), #done
+                      (355, 400), #done
                       (388, 296),
                       (410, 313))  # coordniates of the plates
 
@@ -61,7 +61,7 @@ x_scale = SCREEN_WIDTH/500
 y_scale = SCREEN_HEIGHT/500
 
 # Scale and update table positions
-plate_positions = [(int((x-20) * x_scale), int((y-10) * y_scale))
+plate_positions = [(int(x * x_scale), int((y-10) * y_scale))
                    for x, y in og_plate_positions]
 
 
