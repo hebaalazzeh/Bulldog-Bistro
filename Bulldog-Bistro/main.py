@@ -53,9 +53,10 @@ og_plate_positions = ((77, 182), #done
                       (330, 163), #done
                       (380, 163), #done
                       (300, 290), #done
-                      (355, 400), #done
-                      (388, 296),
-                      (430, 333))  # coordniates of the plates
+                      (355, 270), #done
+                      (410, 275),
+                      (430, 295)) #done
+# coordniates of the plates
 
 x_scale = SCREEN_WIDTH/500
 y_scale = SCREEN_HEIGHT/500
