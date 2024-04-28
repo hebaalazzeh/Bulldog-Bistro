@@ -3,6 +3,7 @@ import os
 import random
 import sys
 
+# note to self:double check if we need docstring and make sure code is well documented!
 pygame.init()
 
 SCREEN_WIDTH = 1000
@@ -14,7 +15,7 @@ pygame.display.set_caption('Bulldog Bistro')
 character_img = pygame.image.load(os.path.join('rival.png'))
 character_img = pygame.transform.scale(character_img, (128, 128))
 
-background = pygame.image.load('background.png')
+background = pygame.image.load('background.png')  # update background
 print(background.get_width(), background.get_height())
 background = pygame.transform.scale(background, (1000, 800))
 
@@ -39,7 +40,7 @@ class Coin(pygame.sprite.Sprite):
             self.image, (32, 32))  # Resize if necessary
 
         self.rect = self.image.get_rect()
-        # Randomly choose a table position
+        # Randomly choose a table - but actually a plate position
         self.rect.topleft = random.choice(table_positions)
 
 
@@ -48,14 +49,14 @@ coins = pygame.sprite.Group()
 character = Character()
 all_sprites.add(character)
 
-og_plate_positions = ((77, 182), #done
-                      (125, 182), #done
-                      (330, 163), #done
-                      (380, 163), #done
-                      (300, 290), #done
-                      (355, 270), #done
+og_plate_positions = ((77, 182),  # done
+                      (125, 182),  # done
+                      (330, 163),  # done
+                      (380, 163),  # done
+                      (300, 290),  # done
+                      (355, 270),  # done
                       (410, 275),
-                      (430, 295)) #done
+                      (430, 295))  # done
 # coordniates of the plates
 
 x_scale = SCREEN_WIDTH/500
@@ -162,6 +163,22 @@ def game_loop():
         clock.tick(60)
 
     end_screen(score)
+
+
+"""
+Runs the main game loop.
+
+This function displays a welcome screen and listens for user input to either start the game loop, exit the game, or go back to the main menu.
+
+Args:
+    None
+
+Returns:
+    None
+
+Raises:
+    None
+"""
 
 
 def main():
