@@ -13,6 +13,7 @@ Bulldog Bistro brings a twist to the traditional restaurant management genre by 
 - **Scoring System**: Accumulate points by successfully stealing burgers while evading detection.
 - **Time-Based Challenge**: Race against the clock with a 30-second time limit, adding intensity and excitement to your escapades.
 
+##(art created by Heba Alazzeh :) )
 ## Installation
 
 1. Install Python and Pygame if you haven't already.
